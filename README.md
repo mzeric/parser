@@ -8,3 +8,6 @@ json.cpp
 
 ### Lisp Parser
 easy to implement, just4fun
+
+### Calc Parser
+a simple calculater syntax parser
