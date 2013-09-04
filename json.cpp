@@ -10,6 +10,8 @@ Author: xiatianxiao@gmail.com
 #include <assert.h>
 #include <string>
 #include <iostream>
+#include <vector>
+#include <map>
 /*
 
 json_object :  { name_pair }
@@ -27,6 +29,26 @@ some_value	:	json_value   |	 some_value , json_value
 
 
 */
+
+class jvalue{
+	class Visitor{
+
+	};
+	virtual void accept(Visitor* v) = 0;
+};
+class jobject: public jvalue{
+public:
+	jobject(arguments);
+	~ jobject();
+	std::map<std::string, jvalue&> content;
+};
+class jarray : public jvalue{
+public:
+	jarray(arguments);
+	~jarray();
+	std::std::vector<jvalue&> content;
+};
+
 
 const char* input_str = "{ \"name\" : \"skysmiler\", \"data\":[\"value\"]}";
 static char look_ahead;
